@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:login_page/widgets/buttom_singin.dart';
+import 'package:login_page/widgets/square_tile.dart';
 import 'package:login_page/widgets/user_text_box.dart';
 
 class WidgetLogPage extends StatelessWidget {
@@ -67,22 +68,72 @@ class WidgetLogPage extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 25.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text('Forgot Password?',
+                      style: TextStyle(color: Colors.grey)),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
             ButtomSingIn(
               onTap: singUserIn,
             ),
             const SizedBox(
               height: 10,
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Forgot Password? ... create account',
-                      style: TextStyle(color: Colors.grey)),
+                  Expanded(
+                    child: Divider(
+                      thickness: 0.5,
+                      color: Colors.grey[400],
+                    ),
+                  ),
+                  Text('Or continue with',
+                      style: TextStyle(color: Colors.grey[600])),
+                  Expanded(
+                    child: Divider(
+                      thickness: 0.5,
+                      color: Colors.grey[400],
+                    ),
+                  )
                 ],
               ),
-            )
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SquareTile(imagePath: 'assets/images/google.png'),
+                SizedBox(
+                  width: 10,
+                ),
+                SquareTile(imagePath: 'assets/images/appel.png')
+              ],
+            ),
+
+            // const SingleChildScrollView(
+            //   child:
+            //       Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            //     SquareTile(
+            //         imagePath:
+            //             '/home/todomar/Documents/TRIP-A-BIKE/APP/assets/images/google.png'),
+            //     SquareTile(
+            //         imagePath:
+            //             '/home/todomar/Documents/TRIP-A-BIKE/APP/assets/images/appel.png')
+            //   ]),
+            // )
           ],
         ),
       ),

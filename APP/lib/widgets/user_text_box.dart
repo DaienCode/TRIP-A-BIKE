@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class UserTextBox extends StatelessWidget {
-  final controller;
+  final TextEditingController controller;
   final String hinText;
   final bool obscureText;
   const UserTextBox(
